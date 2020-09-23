@@ -29,7 +29,10 @@ endif
 
 " }}}
 " Coc : autocomplete for everything {{{
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install()} }
+  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'HerringtonDarkholme/yats.vim'
 " }}}
 
 " Dependencies: {{{

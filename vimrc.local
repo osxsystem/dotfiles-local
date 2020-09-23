@@ -21,9 +21,9 @@ let g:lightline.colorscheme = 'neodark'
 
 if has("gui_macvim")
   " set macvim specific stuff
-  set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h13
-  set linespace=10
-  set guioptions=r         " remove scroll bar on the right
+  set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h12
+  set linespace=6
+  set guioptions=         " remove scroll bar on the right
 endif
 " General settings {{{
 scriptencoding utf-16      " allow emojis in vimrc
@@ -195,20 +195,25 @@ xnoremap <c-j> :move '>+1<CR>gv=gv
 
 " comment on a file tpope/vim-commentary
 xnoremap <C-\> gc
-
+" use :GFiles instead of :Files, seeing as node_modules is usually in the .gitingore file
+nnoremap <c-p> :GFiles<cr>
 
 
 
 
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+      \ 'typescript': ['/usr/local/bin/typescript-language-server', '--stdio'],
+      \ 'typescript.tsx': ['/usr/local/bin/typescript-language-server', '--stdio'],
       \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
       \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
       \ 'python': ['/Users/hung/.pyenv/shims/pyls'],
       \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
       \ }
 " FZF here
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
+" If installed using git
+set rtp+=~/.fzf
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
@@ -229,3 +234,13 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 "   source ~/.config/nvim/coc.vim
 " endif
 " }}}
+" == AUTOCMD ================================ 
+" by default .ts file are not identified as typescript and .tsx files are not
+" identified as typescript react file, so add following
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+autocmd BufEnter *.{js,ts,jsx,tsx} :syntax sync fromstart
+" == AUTOCMD END ================================
+"
+"
+"

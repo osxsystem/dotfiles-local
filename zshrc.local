@@ -10,3 +10,8 @@ export PATH=$PATH:/Users/megatron/.sdkman/candidates/gradle/current/bin
 #Python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
+# Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+# FZF Ignore 
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden --ignore -g "!{node_modules/*,.git/*}"'
