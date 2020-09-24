@@ -213,6 +213,11 @@ let g:LanguageClient_serverCommands = {
 " FZF here
 " set rtp+=/usr/local/opt/fzf
 " If installed using git
+map <F4> <Esc><Esc>:Files!<CR>
+map <F3> <Esc><Esc>:BLines!<CR>
+
+command! -nargs=* -complete=dir FZD call fzf#vim#files(<q-args>, {'options': '--exact --query ' . strftime("%m%d")})
+
 set rtp+=~/.fzf
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
