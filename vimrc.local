@@ -10,9 +10,9 @@
 set background=dark
 " set termguicolors
 colorscheme  neodark
-" let g:neodark#use_256color = 1
+
 let g:neodark#terminal_transparent = 1
-" let g:airline_theme='one'
+
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -35,7 +35,7 @@ set guicursor=
 " set column 120
 set textwidth=120
 set colorcolumn=+1
-" }}}
+" --------------------------------------------------------------------------------------------------------------- }}}
 "  Behavior Modification ----------------------  {{{
 " set leader key
 let g:mapleader=","
@@ -213,8 +213,8 @@ let g:LanguageClient_serverCommands = {
 " FZF here
 " set rtp+=/usr/local/opt/fzf
 " If installed using git
-map <F4> <Esc><Esc>:Files!<CR>
-map <F3> <Esc><Esc>:BLines!<CR>
+map <F4> <Esc><Esc>:Files!<CR>                                " Navigation
+map <F3> <Esc><Esc>:BLines!<CR>                               " Search in the current buffer 
 
 command! -nargs=* -complete=dir FZD call fzf#vim#files(<q-args>, {'options': '--exact --query ' . strftime("%m%d")})
 
