@@ -415,6 +415,7 @@ Plug 'enricobacis/vim-airline-clock'
     \ }
 " assuming you're using vim-plug: https://github.com/junegunn/vim-plug 
 " use coc instead:)
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 " }}}
 " ==================================================

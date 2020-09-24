@@ -203,9 +203,9 @@ nnoremap <c-p> :GFiles<cr>
 
 let g:LanguageClient_serverCommands = {
       \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-      \ 'typescript': ['/usr/local/bin/typescript-language-server', '--stdio'],
-      \ 'typescript.tsx': ['/usr/local/bin/typescript-language-server', '--stdio'],
-      \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+      \ 'typescript': ['~/.nvm/versions/node/v12.18.3/bin/typescript-language-server', '--stdio'],
+      \ 'typescript.tsx': ['~/.nvm/versions/node/v12.18.3/bin/typescript-language-server', '--stdio'],
+      \ 'javascript': ['~/.nvm/versions/node/v12.18.3/bin/javascript-typescript-stdio'],
       \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
       \ 'python': ['/Users/hung/.pyenv/shims/pyls'],
       \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
@@ -245,6 +245,7 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 autocmd BufEnter *.{js,ts,jsx,tsx} :syntax sync fromstart
+let g:prettier#autoformat = 0
 " == AUTOCMD END ================================
 "
 "
