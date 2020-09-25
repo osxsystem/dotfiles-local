@@ -201,15 +201,15 @@ nnoremap <c-p> :GFiles<cr>
 
 
 
-let g:LanguageClient_serverCommands = {
-      \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-      \ 'typescript': ['~/.nvm/versions/node/v12.18.3/bin/typescript-language-server', '--stdio'],
-      \ 'typescript.tsx': ['~/.nvm/versions/node/v12.18.3/bin/typescript-language-server', '--stdio'],
-      \ 'javascript': ['~/.nvm/versions/node/v12.18.3/bin/javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-      \ 'python': ['/Users/hung/.pyenv/shims/pyls'],
-      \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-      \ }
+" let g:LanguageClient_serverCommands = {
+"       \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+"       \ 'typescript': ['~/.nvm/versions/node/v12.18.3/bin/typescript-language-server', '--stdio'],
+"       \ 'typescript.tsx': ['~/.nvm/versions/node/v12.18.3/bin/typescript-language-server', '--stdio'],
+"       \ 'javascript': ['~/.nvm/versions/node/v12.18.3/bin/javascript-typescript-stdio'],
+"       \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+"       \ 'python': ['/Users/hung/.pyenv/shims/pyls'],
+"       \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+"       \ }
 " FZF here
 " set rtp+=/usr/local/opt/fzf
 " If installed using git
@@ -219,9 +219,9 @@ map <F3> <Esc><Esc>:BLines!<CR>
 command! -nargs=* -complete=dir FZD call fzf#vim#files(<q-args>, {'options': '--exact --query ' . strftime("%m%d")})
 
 set rtp+=~/.fzf
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 
 
@@ -242,10 +242,10 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 " == AUTOCMD ================================ 
 " by default .ts file are not identified as typescript and .tsx files are not
 " identified as typescript react file, so add following
-au BufNewFile,BufRead *.ts setlocal filetype=typescript
-au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
-autocmd BufEnter *.{js,ts,jsx,tsx} :syntax sync fromstart
-let g:prettier#autoformat = 0
+" au BufNewFile,BufRead *.ts setlocal filetype=typescript
+" au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+" autocmd BufEnter *.{js,ts,jsx,tsx} :syntax sync fromstart
+" let g:prettier#autoformat = 0
 " == AUTOCMD END ================================
 "
 "
