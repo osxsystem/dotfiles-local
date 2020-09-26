@@ -128,7 +128,7 @@ let g:sh_fold_enabled=1
 " }}}
 " Ignore popular folder and file system
 let g:ctrlp_custom_ignore ='node_modules\DS_Store\|git'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*
 
 " let g:ctrlp_match_window = 'top,order:ttb,min:1,max:31,results:31'
 
@@ -147,7 +147,7 @@ nnoremap <leader>pc :PlugClean<CR>
 nnoremap <leader>wo <c-w>o
 
 " Switch between the last two files
-nnoremap <C-tab><C-tab> <c-^>
+nnoremap <C-tab> <c-^>
 " ---------------------- COPY TO CLIPBOARD -----------------------
 " :w !pbcopy work when copy from the other window
 vmap <C-c> :w !pbcopy<CR>
@@ -197,6 +197,8 @@ nmap ++ <plug>NERDCommenterToggle
 "autocmd VimEnter * NERDTree
 
 let g:NERDTreeGitStatusWithFlags = 1
+let NERDTreeShowHidden=1
+let NERDTreeRespectWildIgnore=1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "let g:NERDTreeGitStatusNodeColorization = 1
 "let g:NERDTreeColorMapCustom = {
@@ -278,9 +280,9 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 " == AUTOCMD ================================ 
 " by default .ts file are not identified as typescript and .tsx files are not
 " identified as typescript react file, so add following
-au BufNewFile,BufRead *.ts setlocal filetype=typescript
-au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
-autocmd BufEnter *.{js,ts,jsx,tsx} :syntax sync fromstart
+" au BufNewFile,BufRead *.ts setlocal filetype=typescript
+" au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+" autocmd BufEnter *.{js,ts,jsx,tsx} :syntax sync fromstart
 
 " == AUTOCMD END ================================
 
@@ -326,7 +328,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
