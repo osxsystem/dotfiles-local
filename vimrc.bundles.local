@@ -13,7 +13,7 @@
 " =============== }}}
 
 " Auto close brackets & Auto Pair ======== {{{
-  Plug 'rstacruz/vim-closer'
+  " Plug 'rstacruz/vim-closer'
   Plug 'jiangmiao/auto-pairs'
 " ========================================= }}}
 

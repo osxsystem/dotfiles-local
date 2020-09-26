@@ -419,3 +419,10 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" Map Buffers
+nnoremap <F2> :Buffers<CR>
+
+" nnoremap <D-n> :bnext<CR>
+" nnoremap <D-p> :bprevious<CR>
+
