@@ -20,3 +20,9 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 # FZF Ignore 
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden --ignore -g "!{node_modules/*,.git/*}"'
+
+
+# Alias command
+
+# RUN Server (asume on the root project)
+alias server='cd app/release && gradle clean release && ./build/release/app/server/bin/server.sh start'
