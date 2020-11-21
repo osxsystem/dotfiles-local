@@ -10,6 +10,8 @@
 
 " Code align ======== {{{
   Plug 'junegunn/vim-easy-align'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 " =============== }}}
 
 " Auto close brackets & Auto Pair ======== {{{
