@@ -1,0 +1,8 @@
+
+alias cd-of1="cd $HOME/Projects/Ahaysoft/openfreightone"
+alias ofone-run="cd app/release && gradle clean release && ./build/release/app/server/bin/server.sh start"
+alias ofone-restart="gradle clean release && ./build/release/app/server/bin/server.sh start"
+alias ofone-run-with-db="gradle clean release && ./build/release/app/server/bin/server.sh start --app.init-db=false"
+alias npm-run-migrate="npm run start -- migrate --migrate-model=all --migrate-load-limit=2000 --migrate-run-batch --migrate-dump-record"
+alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
